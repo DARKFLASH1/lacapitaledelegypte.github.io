@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réservation d'hôtels au Caire</title>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: rgb(7, 7, 43); }
+    header { background: #666; color: white; padding: 20px; text-align: center; }
+    .gallery { display: flex; flex-wrap: wrap; gap: 15px; padding: 20px; justify-content: center; }
+    .hotel-card { cursor: pointer; width: 250px; border-radius: 10px; overflow: hidden; box-shadow: 0 0 10px rgba(0,0,0,0.1); transition: transform 0.2s; background: white; }
+    .hotel-card:hover { transform: scale(1.02); }
+    .hotel-card img { width: 100%; height: 160px; object-fit: cover; }
+    .hotel-card h3 { margin: 10px; font-size: 1.1em; }
+    .details { display: none; padding: 20px; max-width: 900px; margin: auto; background: white; }
+    .details.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    form input, form select { width: 100%; padding: 10px; margin: 10px 0; }
+    form button { padding: 10px 20px; background: #2980b9; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    form button:hover { background: #1c5980; }
+    a {color: white;display:inline-flex;font-weight: bold;text-decoration:none;margin: 5px;padding: 5px;}
+    a:hover{ transform: scale(1.05);background-color: #b88a00;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Réservation d'Hôtels au Caire</h1>
+        <nav>
+            <a href="index.html" >←Retour a la page d'accueil</a>
+        </nav>
+  </header>
+
+  <section class="gallery">
+    <div class="hotel-card" onclick="showDetails('mena')">
+      <img src="images/Marriott.jpg" alt="Marriott Mena House">
+      <h3>Marriott Mena House, Cairo</h3>
+    </div>
+    <div class="hotel-card" onclick="showDetails('steigenberger')">
+      <img src="images/Steigenberger.jpg" alt="Steigenberger Hotel El Tahrir">
+      <h3>Steigenberger Hotel El Tahrir</h3>
+    </div>
+    <div class="hotel-card" onclick="showDetails('kempinski')">
+      <img src="images/kempinski.jpg" alt="Kempinski Nile Hotel">
+      <h3>Kempinski Nile Hotel Cairo</h3>
+    </div>
+    <div class="hotel-card" onclick="showDetails('ramses')">
+      <img src="images/Ramses.jpg" alt="Ramses Hilton">
+      <h3>Ramses Hilton</h3>
+    </div>
+    <div class="hotel-card" onclick="showDetails('fairmont')">
+      <img src="images/Faimont.jpg" alt="Fairmont Nile City">
+      <h3>Fairmont Nile City</h3>
+    </div>
+  </section>
+
+  <section id="mena" class="details">
+    <h2>Marriott Mena House, Cairo</h2>
+    <p>Offrant une vue sur les pyramides de Gizeh, cet hôtel historique allie luxe et tradition. Idéal pour les séjours touristiques.</p>
+    <ul><li>Vue sur les pyramides</li><li>Piscine extérieure</li><li>Restaurant gastronomique</li></ul>
+    <p><strong>À partir de 150 € / nuit</strong></p>
+    <form>
+      <label>Date d'arrivée : <input type="date" required></label>
+      <label>Date de départ : <input type="date" required></label>
+      <label>Type de chambre :
+        <select><option>Standard</option><option>Deluxe</option><option>Suite</option></select>
+      </label>
+      <button type="submit">Réserver</button>
+    </form>
+  </section>
+
+  <section id="steigenberger" class="details">
+    <h2>Steigenberger Hotel El Tahrir</h2>
+    <p>Situé en plein centre-ville, en face du Musée Égyptien, cet hôtel est parfait pour les voyageurs d'affaires et les touristes.</p>
+    <ul><li>Wi-Fi gratuit</li><li>Petit-déjeuner buffet</li><li>Centre de fitness</li></ul>
+    <p><strong>À partir de 110 € / nuit</strong></p>
+    <form>
+      <label>Date d'arrivée : <input type="date" required></label>
+      <label>Date de départ : <input type="date" required></label>
+      <label>Type de chambre :
+        <select><option>Standard</option><option>Deluxe</option><option>Suite</option></select>
+      </label>
+      <button type="submit">Réserver</button>
+    </form>
+  </section>
+
+  <section id="kempinski" class="details">
+    <h2>Kempinski Nile Hotel Cairo</h2>
+    <p>Situé au bord du Nil, ce luxueux hôtel propose des chambres élégantes, un spa raffiné et une cuisine internationale.</p>
+    <ul><li>Spa & bien-être</li><li>Chambres avec vue sur le Nil</li><li>Service 5 étoiles</li></ul>
+    <p><strong>À partir de 130 € / nuit</strong></p>
+    <form>
+      <label>Date d'arrivée : <input type="date" required></label>
+      <label>Date de départ : <input type="date" required></label>
+      <label>Type de chambre :
+        <select><option>Standard</option><option>Deluxe</option><option>Suite</option></select>
+      </label>
+      <button type="submit">Réserver</button>
+    </form>
+  </section>
+
+  <section id="ramses" class="details">
+    <h2>Ramses Hilton</h2>
+    <p>Avec sa vue imprenable sur le Nil, Ramses Hilton propose des hébergements modernes, une piscine, et plusieurs restaurants de renommée.</p>
+    <ul><li>Vue panoramique</li><li>Restaurants variés</li><li>Centre de remise en forme</li></ul>
+    <p><strong>À partir de 120 € / nuit</strong></p>
+    <form>
+      <label>Date d'arrivée : <input type="date" required></label>
+      <label>Date de départ : <input type="date" required></label>
+      <label>Type de chambre :
+        <select><option>Standard</option><option>Deluxe</option><option>Suite</option></select>
+      </label>
+      <button type="submit">Réserver</button>
+    </form>
+  </section>
+
+  <section id="fairmont" class="details">
+    <h2>Fairmont Nile City</h2>
+    <p>Hôtel élégant avec rooftop, restaurants raffinés, chambres luxueuses et vue splendide sur le fleuve Nil.</p>
+    <ul><li>Rooftop avec piscine</li><li>Restaurants gastronomiques</li><li>Vue sur le Nil</li></ul>
+    <p><strong>À partir de 160 € / nuit</strong></p>
+    <form>
+      <label>Date d'arrivée : <input type="date" required></label>
+      <label>Date de départ : <input type="date" required></label>
+      <label>Type de chambre :
+        <select><option>Standard</option><option>Deluxe</option><option>Suite</option></select>
+      </label>
+      <button type="submit">Réserver</button>
+    </form>
+  </section>
+
+  <script>
+    function showDetails(id) {
+      const sections = document.querySelectorAll('.details');
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: document.getElementById(id).offsetTop - 20, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
